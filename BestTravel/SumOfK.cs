@@ -13,18 +13,21 @@ namespace BestTravel
             int numberOfTowns = k;
             int numberOfLoops = distances.Count - numberOfTowns;
             int[] tripDistances = new int[numberOfTowns];
-            for (int i = 0; i <= numberOfLoops; i++)
+            int i = 0;
+            do
             {
                 tripDistances[0] = distances[i];
                 Console.WriteLine("First distance: " + tripDistances[0]);
                 //numberOfTowns--;
                 //Console.WriteLine("Towns: " + numberOfTowns);
-                for (int j = i + 1; j <= numberOfLoops; j++)
-                {
-                    tripDistances[0] = distances[j];
-                    Console.WriteLine("Second distance: " + tripDistances[0]); 
-                }
-            }
+                //for (int j = i + 1; j <= numberOfLoops; j++)
+                //{
+                //    tripDistances[0] = distances[j];
+                //    Console.WriteLine("Second distance: " + tripDistances[0]);
+                //    numberOfTowns--;
+                //}
+                i++;
+            } while (i <= numberOfLoops);
         }
     }
 }
