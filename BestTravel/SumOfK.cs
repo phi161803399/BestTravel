@@ -18,16 +18,24 @@ namespace BestTravel
             {
                 tripDistances[0] = distances[i];
                 Console.WriteLine("First distance: " + tripDistances[0]);
-                //numberOfTowns--;
-                //Console.WriteLine("Towns: " + numberOfTowns);
-                //for (int j = i + 1; j <= numberOfLoops; j++)
-                //{
-                //    tripDistances[0] = distances[j];
-                //    Console.WriteLine("Second distance: " + tripDistances[0]);
-                //    numberOfTowns--;
-                //}
+                RemoveDistance(distances,i);
+                numberOfTowns--;
+                for (int j=0;j<= distances.Count - numberOfTowns;j++)
+                {
+                    Console.WriteLine($"Second distance: {distances[j]}");
+                }                
                 i++;
-            } while (i <= numberOfLoops);
+            } while (i <= numberOfLoops); //numberOfLoops
         }
+
+        static List<int> RemoveDistance(List<int> ls,int i)
+        {
+            for (int k = 0;k<=i;k++)
+            {
+                ls.Remove(ls[i]);
+            }            
+            return ls;
+        }
+
     }
 }
